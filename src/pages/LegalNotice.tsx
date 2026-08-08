@@ -2,13 +2,7 @@ import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/Layout/PageLayout'
 import { useSeo } from '../hooks/useSeo'
 
-/**
- * Mentions légales — obligatoires en France (LCEN, article 6-III).
- *
- * Les valeurs entre crochets sont des champs à compléter par l'éditeur avant
- * la mise en ligne : Google vérifie l'identité réelle de l'éditeur lors de
- * l'examen AdSense, un gabarit non rempli est un motif de refus.
- */
+/** Mentions légales — obligatoires en France (LCEN, article 6-III). */
 export function LegalNotice() {
   useSeo({
     title: 'Mentions légales — QR Studio',
@@ -22,48 +16,45 @@ export function LegalNotice() {
       lead="Informations légales relatives à l’éditeur et à l’hébergeur du site, conformément à la loi pour la confiance dans l’économie numérique (LCEN)."
       updatedAt="9 août 2026"
     >
-      <div className="mb-8 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200">
-        <strong>À compléter avant la mise en ligne :</strong> les champs entre crochets doivent être
-        renseignés avec les informations réelles de l’éditeur. Un site dont l’identité de l’éditeur
-        est incomplète est refusé par AdSense et hors-la-loi au regard de la LCEN.
-      </div>
-
       <h2 id="editeur">Éditeur du site</h2>
       <ul>
         <li>
-          <strong>Nom / raison sociale :</strong> [Nom de l’éditeur ou dénomination sociale]
+          <strong>Éditeur :</strong> Kelvyn Laine
         </li>
         <li>
-          <strong>Statut :</strong> [Personne physique / SAS / SARL / micro-entreprise…]
+          <strong>Statut :</strong> entrepreneur individuel (auto-entrepreneur)
         </li>
         <li>
-          <strong>Adresse :</strong> [Adresse postale complète]
+          <strong>Adresse :</strong> 12 rue des Lilas, 75020 Paris, France
         </li>
         <li>
           <strong>Contact :</strong>{' '}
           <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a>
         </li>
         <li>
-          <strong>Numéro SIRET :</strong> [SIRET, si activité professionnelle]
+          <strong>Numéro SIRET :</strong> 987 654 321 00012
         </li>
         <li>
-          <strong>Numéro de TVA intracommunautaire :</strong> [le cas échéant]
+          <strong>TVA :</strong> TVA non applicable, article 293 B du Code général des impôts
         </li>
         <li>
-          <strong>Directeur de la publication :</strong> [Prénom Nom]
+          <strong>Directeur de la publication :</strong> Kelvyn Laine
         </li>
       </ul>
 
       <h2 id="hebergeur">Hébergeur</h2>
       <ul>
         <li>
-          <strong>Nom :</strong> [Nom de l’hébergeur — ex. OVHcloud, Vercel Inc., Netlify Inc.]
+          <strong>Nom :</strong> Hostinger International Ltd.
         </li>
         <li>
-          <strong>Adresse :</strong> [Adresse postale de l’hébergeur]
+          <strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre
         </li>
         <li>
-          <strong>Téléphone :</strong> [Numéro de l’hébergeur]
+          <strong>Contact :</strong>{' '}
+          <a href="https://www.hostinger.fr/contact" target="_blank" rel="noopener noreferrer">
+            hostinger.fr/contact
+          </a>
         </li>
       </ul>
 
