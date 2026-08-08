@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Crawlers publicitaires Google : nécessaires pour analyser les pages
+# et servir des annonces pertinentes.
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+Sitemap: https://qrstudio.example/sitemap.xml

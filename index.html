@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4F46E5" />
+
+    <title>QR Studio — Générateur de QR codes personnalisés, gratuit et sans inscription</title>
+    <meta
+      name="description"
+      content="Créez un QR code personnalisé : couleurs, dégradés, formes, logo et texte. Aperçu en temps réel, export PNG, JPG et SVG haute définition. Gratuit, sans inscription, sans expiration."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="QR Studio — Générateur de QR codes personnalisés" />
+    <meta
+      property="og:description"
+      content="Composez un QR code à vos couleurs et téléchargez-le en PNG, JPG ou SVG. Gratuit, sans inscription."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Police de l'interface : préconnexion pour éviter le décalage au premier rendu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Google Consent Mode v2 — DOIT être défini avant tout script publicitaire.
+      // Tous les signaux démarrent sur « denied » : aucune donnée publicitaire n'est
+      // utilisée tant que l'utilisateur n'a pas accepté dans la bannière de consentement.
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      window.gtag = gtag
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500,
+      })
+    </script>
+
+    <script>
+      // Applique le thème enregistré avant le premier rendu (évite le flash de couleur).
+      try {
+        const stored = localStorage.getItem('theme')
+        const dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        if (dark) document.documentElement.classList.add('dark')
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
