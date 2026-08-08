@@ -39,7 +39,7 @@ export function FaqPage() {
               le rectangle latéral et la bannière de pied de page, la page reste à
               4 emplacements — la limite au-delà de laquelle Google juge un site sur-monétisé. */}
           {(index + 1) % 5 === 0 && index + 1 < FAQ_ITEMS.length && (
-            <AdUnit slot={AD_SLOTS.inArticle} format="fluid" minHeight={120} className="my-10" />
+            <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="my-10" />
           )}
         </div>
       ))}

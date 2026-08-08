@@ -108,14 +108,26 @@ texte brut, et `https://codeqrgen.fr/faq` doit s'ouvrir directement sans 404.
 ### Mise en service
 
 1. ✅ Domaine renseigné (`VITE_SITE_URL`), `robots.txt` et `sitemap.xml` à jour.
-2. ✅ Publisher ID `ca-pub-2244677473979299` dans `.env.local`, ligne `ads.txt` en place.
-3. ⬜ Compléter les **mentions légales** (identité réelle de l'éditeur et de l'hébergeur) — un
+2. ✅ Publisher ID `ca-pub-2244677473979299` dans `.env.local`, ligne `ads.txt` en place et
+   détectée comme « Autorisé » par AdSense.
+3. ✅ Site `codeqrgen.fr` enregistré dans AdSense — statut « Examen requis ».
+4. ✅ Six blocs d'annonces créés et branchés.
+5. ⬜ Compléter les **mentions légales** (identité réelle de l'éditeur et de l'hébergeur) — un
    gabarit non rempli est un motif de refus AdSense.
-4. ⬜ Créer les blocs d'annonces et renseigner les `VITE_AD_SLOT_*` correspondants.
-5. ⬜ Soumettre le sitemap dans la Google Search Console.
+6. ⬜ Ajouter les informations de paiement dans AdSense (à faire par l'éditeur).
+7. ⬜ Soumettre le sitemap dans la Google Search Console.
 
-`.env.local` n'est pas versionné : le recréer à partir de `.env.example` sur toute nouvelle
-machine, sinon le build repart en mode neutre (sans publicité).
+`.env.local` n'est pas versionné. Valeurs à recréer sur une nouvelle machine (ce sont des
+identifiants publics, présents dans le code source des pages) :
+
+| Variable | Valeur | Bloc AdSense |
+| --- | --- | --- |
+| `VITE_AD_SLOT_HEADER` | `8059983641` | QR Studio - Banniere haute (display horizontal) |
+| `VITE_AD_SLOT_AFTER_GENERATOR` | `5433820303` | QR Studio - Apres generateur (display carré) |
+| `VITE_AD_SLOT_IN_ARTICLE` | `9542641610` | QR Studio - In-article (natif In-Article) |
+| `VITE_AD_SLOT_FOOTER` | `9499957748` | QR Studio - Pied de page (display horizontal) |
+| `VITE_AD_SLOT_SIDEBAR` | `6483178098` | QR Studio - Lateral (display vertical) |
+| `VITE_AD_SLOT_MOBILE_ANCHOR` | `4481886626` | QR Studio - Ancre mobile (display horizontal) |
 
 Tant que `VITE_ADSENSE_CLIENT_ID` est vide, `<AdUnit>` ne rend **rien** et aucun script
 publicitaire n'est chargé : c'est le mode à conserver pendant l'examen du site par Google.

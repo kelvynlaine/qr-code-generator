@@ -95,7 +95,7 @@ export function HowItWorksPage() {
         code qui dit ce qu’il fait.
       </p>
 
-      <AdUnit slot={AD_SLOTS.inArticle} format="fluid" minHeight={120} className="my-10" />
+      <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="my-10" />
 
       <h2 id="etape-3">Étape 3 — Vérifier que le code reste lisible</h2>
       <p>

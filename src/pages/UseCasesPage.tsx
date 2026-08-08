@@ -60,7 +60,7 @@ export function UseCasesPage() {
         vectoriel reste net à n’importe quelle échelle.
       </p>
 
-      <AdUnit slot={AD_SLOTS.inArticle} format="fluid" minHeight={120} className="my-10" />
+      <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="my-10" />
 
       <h2 id="reseaux-sociaux">Réseaux sociaux et création de contenu</h2>
       <p>

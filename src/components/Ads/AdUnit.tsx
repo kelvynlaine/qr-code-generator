@@ -7,6 +7,8 @@ interface AdUnitProps {
   /** Identifiant du bloc AdSense. Vide = emplacement désactivé. */
   slot: string
   format?: 'auto' | 'fluid' | 'horizontal' | 'rectangle'
+  /** `in-article` pour les blocs natifs In-Article (attendu par AdSense avec format="fluid"). */
+  layout?: 'in-article'
   layoutKey?: string
   /** Hauteur réservée en CSS avant chargement, pour éviter tout layout shift. */
   minHeight?: number
@@ -32,6 +34,7 @@ interface AdUnitProps {
 export function AdUnit({
   slot,
   format = 'auto',
+  layout,
   layoutKey,
   minHeight = 100,
   minHeightDesktop,
@@ -86,6 +89,7 @@ export function AdUnit({
         data-ad-client={ADSENSE_CLIENT_ID}
         data-ad-slot={slot}
         data-ad-format={format}
+        data-ad-layout={layout}
         data-ad-layout-key={layoutKey}
         data-full-width-responsive="true"
       />

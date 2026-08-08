@@ -67,7 +67,7 @@ export function FAQ({ limit, adEvery, showAllLink = false, heading = 'Questions 
               {/* Bloc natif inséré dans le flux de lecture, jamais près d'un bouton du générateur. */}
               {adEvery && (index + 1) % adEvery === 0 && index + 1 < items.length && (
                 <li>
-                  <AdUnit slot={AD_SLOTS.inArticle} format="fluid" minHeight={120} className="my-6" />
+                  <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="my-6" />
                 </li>
               )}
             </Fragment>
