@@ -11,7 +11,7 @@
 export const ADSENSE_CLIENT_ID: string = import.meta.env.VITE_ADSENSE_CLIENT_ID ?? ''
 
 /** URL publique du site, utilisée pour les balises canoniques et le sitemap. */
-export const SITE_URL: string = import.meta.env.VITE_SITE_URL ?? 'https://qrstudio.example'
+export const SITE_URL: string = import.meta.env.VITE_SITE_URL ?? 'https://codeqrgen.fr'
 
 /**
  * Identifiants des blocs créés dans l'interface AdSense.

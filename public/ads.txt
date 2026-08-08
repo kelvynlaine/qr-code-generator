@@ -1,13 +1,1 @@
-# ads.txt — Authorized Digital Sellers (IAB Tech Lab)
-#
-# À COMPLÉTER après la création du compte AdSense.
-# Google fournit la ligne exacte dans AdSense > Sites > ads.txt.
-# Elle a systématiquement cette forme, où pub-0000000000000000 est votre
-# Publisher ID (le même que VITE_ADSENSE_CLIENT_ID, sans le préfixe "ca-") :
-#
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
-#
-# Ce fichier doit être servi à la racine du domaine (https://votre-domaine/ads.txt).
-# Placé dans public/, Vite le copie tel quel à la racine du build.
-# Tant que la ligne réelle n'est pas ajoutée, AdSense signale un ads.txt manquant
-# et peut restreindre la diffusion des annonces.
+google.com, pub-2244677473979299, DIRECT, f08c47fec0942fa0

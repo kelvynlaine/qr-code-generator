@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Remplacer https://qrstudio.example par le domaine réel avant mise en ligne
+  Remplacer https://codeqrgen.fr par le domaine réel avant mise en ligne
   (la même valeur que VITE_SITE_URL), puis soumettre le sitemap dans la
   Google Search Console.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://qrstudio.example/</loc>
+    <loc>https://codeqrgen.fr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/comment-ca-marche</loc>
+    <loc>https://codeqrgen.fr/comment-ca-marche</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/cas-usage</loc>
+    <loc>https://codeqrgen.fr/cas-usage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/faq</loc>
+    <loc>https://codeqrgen.fr/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/contact</loc>
+    <loc>https://codeqrgen.fr/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/mentions-legales</loc>
+    <loc>https://codeqrgen.fr/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/politique-de-confidentialite</loc>
+    <loc>https://codeqrgen.fr/politique-de-confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://qrstudio.example/conditions-utilisation</loc>
+    <loc>https://codeqrgen.fr/conditions-utilisation</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

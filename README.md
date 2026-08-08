@@ -82,21 +82,40 @@ Le site est une SPA multipage (`react-router-dom`) :
 | `/conditions-utilisation` | CGU |
 | `/contact` | À propos + contact |
 
-En production, l'hébergeur doit renvoyer `index.html` sur toutes les routes.
-`public/_redirects` couvre Netlify ; sur Vercel ajouter une règle `rewrites`, sur Nginx un
-`try_files $uri /index.html`.
+En production, l'hébergeur doit renvoyer `index.html` sur toutes les routes, sans quoi un accès
+direct à `/faq` renvoie une 404. `public/.htaccess` couvre Apache (Hostinger) et force également
+le HTTPS ; `public/_redirects` couvre Netlify. Sur Vercel, ajouter une règle `rewrites` ; sur
+Nginx, un `try_files $uri /index.html`.
+
+## Déploiement (Hostinger)
+
+Le site est déployé sur **https://codeqrgen.fr**. Vite inline les variables d'environnement au
+moment du build : après toute modification de `.env.local`, il faut reconstruire et ré-uploader.
+
+```bash
+npm run build
+```
+
+Puis téléverser **le contenu** de `dist/` (et non le dossier lui-même) dans `public_html`, en
+vérifiant que `.htaccess`, `ads.txt`, `robots.txt` et `sitemap.xml` sont bien à la racine —
+le gestionnaire de fichiers Hostinger masque les fichiers commençant par un point par défaut.
+
+Contrôles après mise en ligne : `https://codeqrgen.fr/ads.txt` doit afficher la ligne Google en
+texte brut, et `https://codeqrgen.fr/faq` doit s'ouvrir directement sans 404.
 
 ## Monétisation AdSense
 
 ### Mise en service
 
-1. Copier `.env.example` en `.env.local` et renseigner `VITE_SITE_URL`.
-2. Compléter les **mentions légales** (identité réelle de l'éditeur et de l'hébergeur) — un
+1. ✅ Domaine renseigné (`VITE_SITE_URL`), `robots.txt` et `sitemap.xml` à jour.
+2. ✅ Publisher ID `ca-pub-2244677473979299` dans `.env.local`, ligne `ads.txt` en place.
+3. ⬜ Compléter les **mentions légales** (identité réelle de l'éditeur et de l'hébergeur) — un
    gabarit non rempli est un motif de refus AdSense.
-3. Remplacer `https://qrstudio.example` dans `public/robots.txt` et `public/sitemap.xml`.
-4. Créer le compte AdSense, puis coller la ligne fournie par Google dans `public/ads.txt`.
-5. Renseigner `VITE_ADSENSE_CLIENT_ID` puis les `VITE_AD_SLOT_*` au fur et à mesure de la
-   création des blocs.
+4. ⬜ Créer les blocs d'annonces et renseigner les `VITE_AD_SLOT_*` correspondants.
+5. ⬜ Soumettre le sitemap dans la Google Search Console.
+
+`.env.local` n'est pas versionné : le recréer à partir de `.env.example` sur toute nouvelle
+machine, sinon le build repart en mode neutre (sans publicité).
 
 Tant que `VITE_ADSENSE_CLIENT_ID` est vide, `<AdUnit>` ne rend **rien** et aucun script
 publicitaire n'est chargé : c'est le mode à conserver pendant l'examen du site par Google.

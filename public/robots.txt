@@ -9,4 +9,4 @@ Allow: /
 User-agent: AdsBot-Google
 Allow: /
 
-Sitemap: https://qrstudio.example/sitemap.xml
+Sitemap: https://codeqrgen.fr/sitemap.xml

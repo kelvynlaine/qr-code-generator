@@ -1,0 +1,48 @@
+# Configuration Apache (Hostinger) — copiée à la racine du build par Vite.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS (requis par AdSense, et par le référencement).
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Application monopage : toute route inconnue est servie par index.html,
+  # sinon /faq, /cas-usage, etc. renverraient une erreur 404 en accès direct
+  # (et un site avec des 404 est refusé par AdSense).
+  # Les fichiers et dossiers réels — assets, ads.txt, robots.txt, sitemap.xml —
+  # restent servis normalement.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Compression : divise par ~4 le poids du JS et du CSS transférés.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Cache : les assets générés par Vite portent un hash dans leur nom, ils peuvent
+# être mis en cache indéfiniment. index.html et les fichiers de vérification ne
+# doivent jamais l'être, sous peine de servir une version périmée du site.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
+
+<FilesMatch "\.(html|txt|xml)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+
+# Le crawler AdSense doit pouvoir lire ce fichier sans redirection.
+<Files "ads.txt">
+  Header set Cache-Control "public, max-age=3600"
+</Files>
