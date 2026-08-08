@@ -82,11 +82,11 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="mailto:contact@qrstudio.example"
+                href="mailto:kelvyn.off@gmail.com"
                 className="inline-flex items-center gap-1.5 transition-colors duration-150 hover:text-accent-600"
               >
                 <Mail aria-hidden="true" className="h-4 w-4" />
-                contact@qrstudio.example
+                kelvyn.off@gmail.com
               </a>
             </li>
           </ul>

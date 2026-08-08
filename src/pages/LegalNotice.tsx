@@ -41,7 +41,7 @@ export function LegalNotice() {
         </li>
         <li>
           <strong>Contact :</strong>{' '}
-          <a href="mailto:contact@qrstudio.example">contact@qrstudio.example</a>
+          <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a>
         </li>
         <li>
           <strong>Numéro SIRET :</strong> [SIRET, si activité professionnelle]

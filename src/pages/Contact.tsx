@@ -60,11 +60,11 @@ export function Contact() {
       </p>
       <p>
         <a
-          href="mailto:contact@qrstudio.example"
+          href="mailto:kelvyn.off@gmail.com"
           className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-accent-600 px-4 py-2.5 font-semibold text-white no-underline transition-colors duration-150 hover:bg-accent-700"
         >
           <Mail aria-hidden="true" className="h-4 w-4" />
-          contact@qrstudio.example
+          kelvyn.off@gmail.com
         </a>
       </p>
 

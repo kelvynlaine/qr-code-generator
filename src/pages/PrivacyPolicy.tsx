@@ -25,7 +25,7 @@ export function PrivacyPolicy() {
         Le site QR Studio est édité par l’éditeur identifié sur la page{' '}
         <Link to="/mentions-legales">Mentions légales</Link>. Pour toute question relative à vos
         données personnelles, vous pouvez écrire à{' '}
-        <a href="mailto:contact@qrstudio.example">contact@qrstudio.example</a>.
+        <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a>.
       </p>
 
       <h2 id="donnees-generateur">2. Les données que vous saisissez dans le générateur</h2>
@@ -168,7 +168,7 @@ export function PrivacyPolicy() {
       <p>
         En pratique, le générateur ne nous transmettant aucune donnée, nous ne détenons dans la
         quasi-totalité des cas aucune information vous concernant. Pour exercer vos droits, écrivez à{' '}
-        <a href="mailto:contact@qrstudio.example">contact@qrstudio.example</a> ; une réponse vous sera
+        <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a> ; une réponse vous sera
         apportée dans un délai maximum d’un mois. Si vous estimez, après nous avoir contactés, que vos
         droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la{' '}
         <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">
