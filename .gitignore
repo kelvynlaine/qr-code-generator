@@ -28,3 +28,6 @@ dist-ssr
 .env.*
 !.env.example
 !.env.production
+
+# Archive de déploiement générée localement
+codeqrgen-dist.zip
