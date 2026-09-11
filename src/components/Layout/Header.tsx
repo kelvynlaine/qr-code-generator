@@ -4,25 +4,35 @@ import { Menu, Moon, QrCode, Sun, X } from 'lucide-react'
 
 const NAV_LINKS = [
   { to: '/', label: 'Générateur' },
+  { to: '/guides', label: 'Guides' },
   { to: '/comment-ca-marche', label: 'Comment ça marche' },
   { to: '/cas-usage', label: 'Cas d’usage' },
   { to: '/faq', label: 'FAQ' },
 ]
 
-/** Thème persistant, initialisé sur la préférence système. */
+/**
+ * Thème persistant. La classe `dark` est posée avant le premier rendu par un script
+ * d'index.html ; l'état React ne la lit qu'après le montage, pour que le premier
+ * rendu corresponde au HTML pré-rendu (qui ne connaît pas la préférence du visiteur).
+ */
 function useTheme() {
-  const [dark, setDark] = useState(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
+  const [dark, setDark] = useState<boolean | null>(null)
 
   useEffect(() => {
+    setDark(document.documentElement.classList.contains('dark'))
+  }, [])
+
+  useEffect(() => {
+    if (dark === null) return
     document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light')
+    } catch {
+      /* Stockage indisponible : le thème vaut pour la session. */
+    }
   }, [dark])
 
-  return [dark, setDark] as const
+  return [dark === true, setDark] as const
 }
 
 export function Header() {
@@ -60,7 +70,7 @@ export function Header() {
           QR Studio
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
             <NavLink key={link.to} to={link.to} end={link.to === '/'} className={desktopLinkClass}>
               {link.label}
@@ -94,16 +104,16 @@ export function Header() {
             onClick={() => setOpen(true)}
             aria-label="Ouvrir le menu"
             aria-expanded={open}
-            className="flex h-11 w-11 items-center justify-center rounded-lg text-ink transition-colors duration-150 hover:bg-subtle md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-ink transition-colors duration-150 hover:bg-subtle lg:hidden"
           >
             <Menu aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
       </div>
 
-      {/* Drawer mobile */}
+      {/* Drawer mobile et tablette */}
       {open && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           <button
             type="button"
             aria-label="Fermer le menu"

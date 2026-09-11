@@ -3,12 +3,7 @@ import { Mail, QrCode } from 'lucide-react'
 import { AdUnit } from '../Ads/AdUnit'
 import { AD_SLOTS } from '../../lib/adsense'
 import { useConsent } from '../../lib/consent'
-
-const SOCIALS = [
-  { label: 'X (Twitter)', href: 'https://x.com' },
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
-  { label: 'GitHub', href: 'https://github.com' },
-]
+import { GUIDES, guidePath } from '../../data/guides'
 
 const PRODUCT_LINKS = [
   { to: '/', label: 'Générateur' },
@@ -18,10 +13,10 @@ const PRODUCT_LINKS = [
 ]
 
 const LEGAL_LINKS = [
+  { to: '/contact', label: 'À propos et contact' },
   { to: '/mentions-legales', label: 'Mentions légales' },
   { to: '/politique-de-confidentialite', label: 'Politique de confidentialité' },
   { to: '/conditions-utilisation', label: 'Conditions d’utilisation' },
-  { to: '/contact', label: 'À propos et contact' },
 ]
 
 export function Footer() {
@@ -34,8 +29,8 @@ export function Footer() {
         <AdUnit slot={AD_SLOTS.footer} format="horizontal" minHeight={100} minHeightDesktop={90} />
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+        <div>
           <p className="flex items-center gap-2 font-semibold text-ink">
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-600 text-white">
               <QrCode aria-hidden="true" className="h-5 w-5" />
@@ -48,13 +43,30 @@ export function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Liens du site">
+        <nav aria-label="Liens du produit">
           <h2 className="text-sm font-semibold text-ink">Le produit</h2>
           <ul className="mt-3 space-y-2 text-sm text-muted">
             {PRODUCT_LINKS.map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className="transition-colors duration-150 hover:text-accent-600">
                   {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Guides">
+          <h2 className="text-sm font-semibold text-ink">
+            <Link to="/guides" className="transition-colors duration-150 hover:text-accent-600">
+              Guides
+            </Link>
+          </h2>
+          <ul className="mt-3 space-y-2 text-sm text-muted">
+            {GUIDES.map((guide) => (
+              <li key={guide.slug}>
+                <Link to={guidePath(guide.slug)} className="transition-colors duration-150 hover:text-accent-600">
+                  {guide.title}
                 </Link>
               </li>
             ))}
@@ -94,22 +106,10 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6">
-          <p className="text-sm text-muted">© {new Date().getFullYear()} QR Studio. Tous droits réservés.</p>
-          <ul className="flex gap-1">
-            {SOCIALS.map(({ label, href }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-muted transition-colors duration-150 hover:bg-surface hover:text-accent-600"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+          <p className="text-sm text-muted">
+            © {new Date().getFullYear()} QR Studio — édité par Kelvyn Laine, Paris.
+          </p>
         </div>
       </div>
     </footer>

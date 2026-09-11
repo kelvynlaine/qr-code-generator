@@ -7,17 +7,13 @@ import { AnchorAd } from './components/Ads/AnchorAd'
 import { AdUnit } from './components/Ads/AdUnit'
 import { AD_SLOTS } from './lib/adsense'
 import { useScrollToTop } from './hooks/useSeo'
-import { Home } from './pages/Home'
-import { HowItWorksPage } from './pages/HowItWorksPage'
-import { UseCasesPage } from './pages/UseCasesPage'
-import { FaqPage } from './pages/FaqPage'
-import { PrivacyPolicy } from './pages/PrivacyPolicy'
-import { LegalNotice } from './pages/LegalNotice'
-import { Terms } from './pages/Terms'
-import { Contact } from './pages/Contact'
-import { NotFound } from './pages/NotFound'
+import { ROUTES } from './routes'
 
-function Shell() {
+/**
+ * Structure du site, indépendante du routeur : le navigateur la monte dans un
+ * BrowserRouter, le pré-rendu dans un StaticRouter (voir entry-server.tsx).
+ */
+export function AppShell() {
   const { pathname } = useLocation()
   const isHome = pathname === '/'
   useScrollToTop()
@@ -45,15 +41,9 @@ function Shell() {
 
       <main id="contenu">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/comment-ca-marche" element={<HowItWorksPage />} />
-          <Route path="/cas-usage" element={<UseCasesPage />} />
-          <Route path="/faq" element={<FaqPage />} />
-          <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
-          <Route path="/mentions-legales" element={<LegalNotice />} />
-          <Route path="/conditions-utilisation" element={<Terms />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          {ROUTES.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
         </Routes>
       </main>
 
@@ -68,7 +58,7 @@ export default function App() {
   return (
     <ConsentProvider>
       <BrowserRouter>
-        <Shell />
+        <AppShell />
       </BrowserRouter>
     </ConsentProvider>
   )

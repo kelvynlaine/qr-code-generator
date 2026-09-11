@@ -24,6 +24,8 @@ interface StoredConsent {
 
 interface ConsentContextValue {
   status: ConsentStatus
+  /** Faux pendant le rendu serveur et le premier rendu navigateur (avant lecture du stockage). */
+  hydrated: boolean
   /** Vrai si l'utilisateur a accepté les cookies publicitaires. */
   adsAllowed: boolean
   accept: () => void
@@ -58,7 +60,15 @@ function updateConsentMode(granted: boolean): void {
 }
 
 export function ConsentProvider({ children }: { children: ReactNode }) {
-  const [status, setStatus] = useState<ConsentStatus>(() => readStoredConsent())
+  // Le stockage n'est lu qu'après le montage : le premier rendu navigateur doit être
+  // identique au HTML pré-rendu, qui ne connaît pas le choix du visiteur.
+  const [status, setStatus] = useState<ConsentStatus>('pending')
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setStatus(readStoredConsent())
+    setHydrated(true)
+  }, [])
 
   // Un consentement déjà accordé lors d'une visite précédente doit être rejoué au démarrage.
   useEffect(() => {
@@ -99,8 +109,8 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo<ConsentContextValue>(
-    () => ({ status, adsAllowed: status === 'granted', accept, reject, reopen }),
-    [status, accept, reject, reopen],
+    () => ({ status, hydrated, adsAllowed: status === 'granted', accept, reject, reopen }),
+    [status, hydrated, accept, reject, reopen],
   )
 
   return <ConsentContext.Provider value={value}>{children}</ConsentContext.Provider>

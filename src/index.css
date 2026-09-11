@@ -199,6 +199,14 @@ input[type='color']::-moz-color-swatch {
   font-weight: 600;
   background: var(--color-subtle);
 }
+.rich-text code {
+  font-size: 0.875em;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  background: var(--color-subtle);
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
 
 /* --- Emplacements publicitaires ---
    La hauteur est réservée AVANT le chargement de l'annonce : le contenu ne bouge

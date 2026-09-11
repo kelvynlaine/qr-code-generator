@@ -13,7 +13,7 @@ import { Toggle } from '../ui/Controls'
  * seuls les scripts publicitaires le sont.
  */
 export function ConsentBanner() {
-  const { status, accept, reject } = useConsent()
+  const { status, hydrated, accept, reject } = useConsent()
   const [showDetails, setShowDetails] = useState(false)
   const [adsChoice, setAdsChoice] = useState(false)
   const titleId = useId()
@@ -24,7 +24,8 @@ export function ConsentBanner() {
     if (status === 'pending') bannerRef.current?.focus()
   }, [status])
 
-  if (status !== 'pending') return null
+  // Jamais dans le HTML pré-rendu : la bannière dépend du choix stocké dans le navigateur.
+  if (!hydrated || status !== 'pending') return null
 
   const buttonBase =
     'min-h-11 flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors duration-150'

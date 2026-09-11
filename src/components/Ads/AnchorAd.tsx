@@ -20,8 +20,17 @@ import { AdUnit } from './AdUnit'
 export function AnchorAd() {
   const { status, adsAllowed } = useConsent()
   const { pathname } = useLocation()
-  const [dismissed, setDismissed] = useState(() => sessionStorage.getItem('anchor-ad-dismissed') === '1')
+  const [dismissed, setDismissed] = useState(false)
   const [pastGenerator, setPastGenerator] = useState(false)
+
+  // Lu après le montage : sessionStorage n'existe pas pendant le pré-rendu.
+  useEffect(() => {
+    try {
+      setDismissed(sessionStorage.getItem('anchor-ad-dismissed') === '1')
+    } catch {
+      /* Stockage indisponible : l'ancre reste simplement fermable pour la page. */
+    }
+  }, [])
 
   useEffect(() => {
     let frame = 0

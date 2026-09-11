@@ -1,15 +1,7 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { SITE_URL } from '../lib/adsense'
-
-interface SeoOptions {
-  title: string
-  description: string
-  /** Données structurées Schema.org injectées dans un <script type="application/ld+json">. */
-  jsonLd?: object
-  /** `noindex` pour les pages sans valeur SEO. */
-  noIndex?: boolean
-}
+import { SeoCollectorContext, type SeoData } from '../lib/seo'
 
 function setMeta(selector: string, attribute: string, value: string): void {
   let tag = document.head.querySelector<HTMLMetaElement>(selector)
@@ -24,14 +16,18 @@ function setMeta(selector: string, attribute: string, value: string): void {
 
 /**
  * Renseigne les métadonnées de la page courante (titre, description, canonique,
- * Open Graph, données structurées) et remonte en haut à chaque changement de route.
+ * Open Graph, données structurées).
  *
- * Le site étant une SPA, ces balises sont posées côté client : c'est suffisant pour
- * Google qui exécute le JavaScript, mais un rendu serveur (Next.js, ou un
- * pré-rendu type `vite-plugin-ssg`) reste préférable si le SEO devient critique.
+ * Deux chemins :
+ * - **pré-rendu** : les métadonnées sont capturées pendant le rendu serveur et
+ *   écrites en dur dans le HTML de chaque page — c'est ce que lisent les robots ;
+ * - **navigateur** : elles sont mises à jour à chaque navigation côté client.
  */
-export function useSeo({ title, description, jsonLd, noIndex = false }: SeoOptions): void {
+export function useSeo({ title, description, jsonLd, noIndex = false }: SeoData): void {
+  const collector = useContext(SeoCollectorContext)
   const { pathname } = useLocation()
+
+  if (collector) collector.current = { title, description, jsonLd, noIndex }
 
   useEffect(() => {
     document.title = title
@@ -48,6 +44,10 @@ export function useSeo({ title, description, jsonLd, noIndex = false }: SeoOptio
       document.head.appendChild(canonical)
     }
     canonical.href = `${SITE_URL}${pathname}`
+
+    // Les données structurées écrites au pré-rendu ne valent que pour la page
+    // d'arrivée : elles sont remplacées par celles de la page affichée.
+    document.head.querySelectorAll('script[data-seo="ssr"]').forEach((node) => node.remove())
 
     if (!jsonLd) return
     const script = document.createElement('script')

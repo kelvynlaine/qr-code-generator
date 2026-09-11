@@ -3,6 +3,7 @@ import { QRGenerator } from '../components/QRGenerator'
 import { HowItWorks } from '../components/Marketing/HowItWorks'
 import { UseCases } from '../components/Marketing/UseCases'
 import { FAQ } from '../components/Marketing/FAQ'
+import { GuidesTeaser } from '../components/Marketing/GuidesTeaser'
 import { AdUnit } from '../components/Ads/AdUnit'
 import { AD_SLOTS } from '../lib/adsense'
 import { useSeo } from '../hooks/useSeo'
@@ -50,6 +51,7 @@ export function Home() {
 
       <HowItWorks />
       <UseCases />
+      <GuidesTeaser />
       <FAQ limit={4} showAllLink />
     </>
   )
