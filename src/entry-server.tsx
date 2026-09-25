@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { AppShell } from './App'
-import { ConsentProvider } from './lib/consent'
 import { SeoCollectorContext, type SeoData } from './lib/seo'
 import { SITE_URL } from './lib/adsense'
 import { ROUTES } from './routes'
@@ -17,11 +16,9 @@ export function render(url: string): { html: string; seo: SeoData | null } {
   const html = renderToString(
     <StrictMode>
       <SeoCollectorContext.Provider value={seo}>
-        <ConsentProvider>
-          <StaticRouter location={url}>
-            <AppShell />
-          </StaticRouter>
-        </ConsentProvider>
+        <StaticRouter location={url}>
+          <AppShell />
+        </StaticRouter>
       </SeoCollectorContext.Provider>
     </StrictMode>,
   )

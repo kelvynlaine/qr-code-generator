@@ -35,10 +35,8 @@ export function FaqPage() {
           {item.answer.map((paragraph) => (
             <p key={paragraph.slice(0, 32)}>{paragraph}</p>
           ))}
-          {/* Un seul bloc in-article, au milieu de la lecture : avec la bannière haute,
-              le rectangle latéral et la bannière de pied de page, la page reste à
-              4 emplacements — la limite au-delà de laquelle Google juge un site sur-monétisé. */}
-          {(index + 1) % 5 === 0 && index + 1 < FAQ_ITEMS.length && (
+          {/* Un seul bloc in-article, au milieu de la lecture. */}
+          {index === Math.floor(FAQ_ITEMS.length / 2) - 1 && (
             <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="my-10" />
           )}
         </div>

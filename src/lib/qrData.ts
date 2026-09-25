@@ -22,6 +22,18 @@ function buildVCard(v: QRConfig['vcard']): string {
   return lines.join('\n')
 }
 
+/**
+ * Convertit une chaîne en suite d'octets UTF-8 (un caractère par octet).
+ * La librairie de QR code embarquée par qr-code-styling n'encode que l'octet de poids
+ * faible de chaque caractère : sans cette conversion, « é », « ’ » ou « € » seraient
+ * illisibles une fois scannés. Les lecteurs décodent ensuite ces octets en UTF-8.
+ */
+export function toUtf8Bytes(value: string): string {
+  let bytes = ''
+  for (const byte of new TextEncoder().encode(value)) bytes += String.fromCharCode(byte)
+  return bytes
+}
+
 /** Transforme la configuration en chaîne encodée dans le QR code. */
 export function buildQRData(config: QRConfig): string {
   switch (config.contentType) {
@@ -31,10 +43,14 @@ export function buildQRData(config: QRConfig): string {
       return config.text
     case 'email': {
       const { address, subject, body } = config.email
-      const params = new URLSearchParams()
-      if (subject) params.set('subject', subject)
-      if (body) params.set('body', body)
-      const query = params.toString()
+      // encodeURIComponent et non URLSearchParams : ce dernier code les espaces en « + »,
+      // que de nombreuses messageries affichent tels quels dans l'objet du message.
+      const query = [
+        subject && `subject=${encodeURIComponent(subject)}`,
+        body && `body=${encodeURIComponent(body)}`,
+      ]
+        .filter(Boolean)
+        .join('&')
       return `mailto:${address.trim()}${query ? `?${query}` : ''}`
     }
     case 'phone':
@@ -121,7 +137,7 @@ export function buildQROptions(config: QRConfig, size: number, type: 'canvas' | 
     height: size,
     // Le fond de la carte est dessiné par nos soins : le QR lui-même reste transparent.
     margin: Math.round((config.margin * size) / 320),
-    data: buildQRData(config) || ' ',
+    data: toUtf8Bytes(buildQRData(config) || ' '),
     image: config.logo ?? undefined,
     qrOptions: { errorCorrectionLevel: config.errorCorrectionLevel },
     imageOptions: {

@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
-import { AdUnit } from '../Ads/AdUnit'
-import { AD_SLOTS } from '../../lib/adsense'
 
 interface PageLayoutProps {
   title: string
@@ -13,7 +11,7 @@ interface PageLayoutProps {
   meta?: string
   /** Niveaux intermédiaires du fil d'Ariane, entre « Accueil » et la page courante. */
   breadcrumb?: { to: string; label: string }[]
-  /** Colonne latérale (desktop) : sommaire, encarts, publicité. */
+  /** Colonne latérale (desktop) : sommaire, encarts. */
   aside?: ReactNode
   /** Contenu placé après l'article, hors de la typographie éditoriale. */
   after?: ReactNode
@@ -22,9 +20,6 @@ interface PageLayoutProps {
 
 /**
  * Gabarit des pages de contenu (éditoriales et légales).
- *
- * La publicité latérale n'apparaît que sur ces pages, jamais à côté du générateur :
- * elle reste ainsi loin de tout bouton d'action du produit.
  */
 export function PageLayout({
   title,
@@ -71,13 +66,6 @@ export function PageLayout({
 
         <aside className="hidden lg:sticky lg:top-24 lg:block">
           {aside}
-          <AdUnit
-            slot={AD_SLOTS.sidebar}
-            format="rectangle"
-            minHeight={250}
-            minHeightDesktop={600}
-            className="mt-6"
-          />
         </aside>
       </div>
     </div>

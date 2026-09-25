@@ -1,5 +1,8 @@
 # Configuration Apache / LiteSpeed (Hostinger) — copiée à la racine du build par Vite.
 
+# MultiViews associerait /guides/x à guides.html : désactivé pour des URL sans ambiguïté.
+Options -MultiViews
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -17,10 +20,27 @@
   RewriteCond %{THE_REQUEST} \s/([^\s?]+)\.html[\s?]
   RewriteRule ^ /%1 [R=301,L]
 
+  # Anciennes adresses du site (version précédente, encore indexées par Google) :
+  # redirection permanente vers la page équivalente, plutôt qu'une erreur 404.
+  RewriteRule ^a-propos/?$ /contact [R=301,L]
+  RewriteRule ^confidentialite/?$ /politique-de-confidentialite [R=301,L]
+  RewriteRule ^conditions/?$ /conditions-utilisation [R=301,L]
+  RewriteRule ^guides/creer-un-qr-code-personnalise/?$ /guide/personnaliser-qr-code-sans-perdre-la-lecture [R=301,L]
+  RewriteRule ^guides/qr-code-statique-vs-dynamique/?$ /guide/qr-code-statique-ou-dynamique [R=301,L]
+  RewriteRule ^guides/qr-code-vcard-contact/?$ /guide/qr-code-carte-de-visite [R=301,L]
+  RewriteRule ^guides/(qr-code-wifi|qr-code-menu-restaurant|niveau-correction-erreur-qr-code|qr-code-carte-de-visite|qr-code-reseaux-sociaux)/?$ /guide/$1 [R=301,L]
+  RewriteRule ^guides/.+$ /guides [R=301,L]
+
+  # Une seule adresse par page : /faq/ → /faq.
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
   # Chaque page est pré-générée en HTML : /faq sert faq.html, /guide/x sert guide/x.html.
   # Les fichiers réels (assets, ads.txt, robots.txt, sitemap.xml) restent servis tels quels.
+  # Le test porte sur le chemin exact ($1.html) : avec REQUEST_FILENAME, une adresse comme
+  # /guides/x pouvait être résolue en guides.html + « /x », d'où une boucle et une erreur 500.
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.+)$ $1.html [L]
 </IfModule>
 

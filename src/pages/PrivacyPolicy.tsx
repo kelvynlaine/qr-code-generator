@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom'
 import { PageLayout } from '../components/Layout/PageLayout'
 import { useSeo } from '../hooks/useSeo'
-import { useConsent } from '../lib/consent'
+import { openCookiePreferences } from '../lib/cookiePreferences'
 
-const UPDATED_AT = '9 août 2026'
+const UPDATED_AT = '25 septembre 2026'
 
 export function PrivacyPolicy() {
-  const { reopen, status } = useConsent()
-
   useSeo({
     title: 'Politique de confidentialité — QR Studio',
     description:
@@ -55,8 +53,9 @@ export function PrivacyPolicy() {
           stockage local de votre navigateur.
         </li>
         <li>
-          <strong>Choix de consentement</strong> — mémorise votre réponse à la bannière cookies, pour
-          ne pas vous la présenter à chaque visite. Conservé 6 mois maximum.
+          <strong>Choix de consentement</strong> — votre réponse au message de consentement est
+          conservée par la plateforme de gestion du consentement de Google, pour ne pas vous la
+          présenter à chaque visite.
         </li>
       </ul>
       <p>
@@ -65,9 +64,9 @@ export function PrivacyPolicy() {
       </p>
       <h3>3.2 Cookies publicitaires (soumis à votre consentement)</h3>
       <p>
-        Le service est gratuit et financé par la publicité. Si — et seulement si — vous y consentez,
-        nous chargeons <strong>Google AdSense</strong>. Google et ses partenaires peuvent alors
-        déposer des cookies sur votre terminal pour :
+        Le service est gratuit et financé par la publicité diffusée par <strong>Google
+        AdSense</strong>. Avec votre accord, Google et ses partenaires peuvent déposer des cookies
+        sur votre terminal pour :
       </p>
       <ul>
         <li>diffuser des annonces personnalisées en fonction de votre navigation ;</li>
@@ -75,12 +74,13 @@ export function PrivacyPolicy() {
         <li>détecter les activités frauduleuses (clics automatisés notamment).</li>
       </ul>
       <p>
-        Tant que vous n’avez pas répondu à la bannière, <strong>aucun script publicitaire n’est
-        chargé</strong>. Si vous refusez, le script n’est pas chargé non plus et aucune publicité ne
-        s’affiche. Nous appliquons le <strong>Google Consent Mode v2</strong> : les signaux de
-        consentement (<em>ad_storage</em>, <em>ad_user_data</em>, <em>ad_personalization</em>,{' '}
-        <em>analytics_storage</em>) sont positionnés sur « refusé » par défaut et ne passent à
-        « accordé » qu’après votre acceptation explicite.
+        Lors de votre première visite depuis l’Espace économique européen, le Royaume-Uni ou la
+        Suisse, un message de consentement vous est présenté. Il est fourni par la plateforme de
+        gestion du consentement de Google, certifiée selon le cadre IAB TCF v2.2.{' '}
+        <strong>Refuser est aussi simple qu’accepter</strong>, et vous pouvez détailler vos choix
+        par finalité et par partenaire. Tant que vous n’avez pas consenti, aucun cookie publicitaire
+        n’est lu ni déposé à des fins de personnalisation ; Google peut alors diffuser des annonces
+        non personnalisées, qui s’appuient sur le contexte de la page et non sur votre navigation.
       </p>
       <p>
         Pour comprendre le traitement effectué par Google en tant que partenaire publicitaire,
@@ -107,20 +107,17 @@ export function PrivacyPolicy() {
       <h2 id="modifier-consentement">4. Modifier ou retirer votre consentement</h2>
       <p>
         Votre consentement est révocable à tout moment, aussi simplement qu’il a été donné. Le bouton
-        ci-dessous réaffiche la bannière et réinitialise votre choix.
+        ci-dessous réaffiche le message de consentement pour modifier ou retirer votre choix. Le même
+        lien « Préférences cookies » figure en bas de chaque page.
       </p>
       <p>
         <button
           type="button"
-          onClick={reopen}
+          onClick={openCookiePreferences}
           className="min-h-11 rounded-lg bg-accent-600 px-4 py-2.5 text-sm font-semibold text-white no-underline transition-colors duration-150 hover:bg-accent-700"
         >
           Modifier mes préférences cookies
-        </button>{' '}
-        <span className="text-sm">
-          (choix actuel :{' '}
-          {status === 'granted' ? 'cookies publicitaires acceptés' : status === 'denied' ? 'cookies publicitaires refusés' : 'aucun choix enregistré'})
-        </span>
+        </button>
       </p>
       <p>
         Vous pouvez aussi supprimer les cookies déjà déposés depuis les réglages de votre navigateur,
@@ -187,7 +184,7 @@ export function PrivacyPolicy() {
       <p>
         Cette politique peut être mise à jour pour refléter une évolution du service ou de la
         réglementation. La date de dernière mise à jour figure en haut de page ; en cas de changement
-        substantiel affectant vos droits, la bannière de consentement vous sera présentée à nouveau.
+        substantiel affectant vos droits, le message de consentement vous sera présenté à nouveau.
       </p>
     </PageLayout>
   )

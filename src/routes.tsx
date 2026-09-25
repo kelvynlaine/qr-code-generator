@@ -8,6 +8,11 @@ import { QrCodeSizeGuide } from './pages/guides/QrCodeSizeGuide'
 import { StaticVsDynamicGuide } from './pages/guides/StaticVsDynamicGuide'
 import { ReadableColorsGuide } from './pages/guides/ReadableColorsGuide'
 import { QrSecurityGuide } from './pages/guides/QrSecurityGuide'
+import { WifiGuide } from './pages/guides/WifiGuide'
+import { MenuRestaurantGuide } from './pages/guides/MenuRestaurantGuide'
+import { ErrorCorrectionGuide } from './pages/guides/ErrorCorrectionGuide'
+import { BusinessCardGuide } from './pages/guides/BusinessCardGuide'
+import { SocialMediaGuide } from './pages/guides/SocialMediaGuide'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { LegalNotice } from './pages/LegalNotice'
 import { Terms } from './pages/Terms'
@@ -27,6 +32,11 @@ const GUIDE_PAGES: Record<string, ReactElement> = {
   'qr-code-statique-ou-dynamique': <StaticVsDynamicGuide />,
   'personnaliser-qr-code-sans-perdre-la-lecture': <ReadableColorsGuide />,
   'securite-qr-code-quishing': <QrSecurityGuide />,
+  'qr-code-wifi': <WifiGuide />,
+  'qr-code-menu-restaurant': <MenuRestaurantGuide />,
+  'niveau-correction-erreur-qr-code': <ErrorCorrectionGuide />,
+  'qr-code-carte-de-visite': <BusinessCardGuide />,
+  'qr-code-reseaux-sociaux': <SocialMediaGuide />,
 }
 
 /**

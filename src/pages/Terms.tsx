@@ -87,8 +87,8 @@ export function Terms() {
       <p>
         Le service est financé par la publicité affichée via Google AdSense. Les emplacements
         publicitaires sont conçus pour ne jamais gêner l’utilisation du générateur ni provoquer de
-        clic accidentel. Aucune publicité n’est affichée avant votre consentement, et le refus des
-        cookies publicitaires ne restreint en rien l’accès au service.
+        clic accidentel. Aucune publicité personnalisée n’est affichée sans votre consentement, et le
+        refus des cookies publicitaires ne restreint en rien l’accès au service.
       </p>
 
       <h2 id="donnees">6. Données personnelles</h2>

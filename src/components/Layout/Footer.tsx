@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Mail, QrCode } from 'lucide-react'
-import { AdUnit } from '../Ads/AdUnit'
-import { AD_SLOTS } from '../../lib/adsense'
-import { useConsent } from '../../lib/consent'
+import { openCookiePreferences } from '../../lib/cookiePreferences'
 import { GUIDES, guidePath } from '../../data/guides'
 
 const PRODUCT_LINKS = [
@@ -20,14 +18,8 @@ const LEGAL_LINKS = [
 ]
 
 export function Footer() {
-  const { reopen } = useConsent()
-
   return (
     <footer className="border-t border-border bg-subtle">
-      {/* Dernier emplacement publicitaire, avant les liens légaux. */}
-      <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6">
-        <AdUnit slot={AD_SLOTS.footer} format="horizontal" minHeight={100} minHeightDesktop={90} />
-      </div>
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
@@ -86,7 +78,7 @@ export function Footer() {
             <li>
               <button
                 type="button"
-                onClick={reopen}
+                onClick={openCookiePreferences}
                 className="text-left transition-colors duration-150 hover:text-accent-600"
               >
                 Préférences cookies
@@ -108,7 +100,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} QR Studio — édité par Kelvyn Laine, Paris.
+            © {new Date().getFullYear()} QR Studio — édité par Kelvyn Laine.
           </p>
         </div>
       </div>

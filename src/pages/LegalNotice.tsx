@@ -14,33 +14,27 @@ export function LegalNotice() {
     <PageLayout
       title="Mentions légales"
       lead="Informations légales relatives à l’éditeur et à l’hébergeur du site, conformément à la loi pour la confiance dans l’économie numérique (LCEN)."
-      updatedAt="9 août 2026"
+      updatedAt="25 septembre 2026"
     >
       <h2 id="editeur">Éditeur du site</h2>
       <ul>
         <li>
-          <strong>Éditeur :</strong> Kelvyn Laine
-        </li>
-        <li>
-          <strong>Statut :</strong> entrepreneur individuel (auto-entrepreneur)
-        </li>
-        <li>
-          <strong>Adresse :</strong> 12 rue des Lilas, 75020 Paris, France
+          <strong>Éditeur :</strong> Kelvyn Laine, personne physique
         </li>
         <li>
           <strong>Contact :</strong>{' '}
           <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a>
         </li>
         <li>
-          <strong>Numéro SIRET :</strong> 987 654 321 00012
-        </li>
-        <li>
-          <strong>TVA :</strong> TVA non applicable, article 293 B du Code général des impôts
-        </li>
-        <li>
           <strong>Directeur de la publication :</strong> Kelvyn Laine
         </li>
       </ul>
+      <p>
+        Conformément à l’article 1-1 de la loi n° 2004-575 du 21 juin 2004 (LCEN), les éléments
+        d’identification personnels de l’éditeur, dont son adresse postale, ont été communiqués à
+        l’hébergeur ci-dessous. Toute demande peut être adressée à l’éditeur par e-mail, à
+        l’adresse indiquée ci-dessus.
+      </p>
 
       <h2 id="hebergeur">Hébergeur</h2>
       <ul>

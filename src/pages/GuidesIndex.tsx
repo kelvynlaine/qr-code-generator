@@ -3,8 +3,6 @@ import { ArrowRight, Clock } from 'lucide-react'
 import { GUIDES, guidePath } from '../data/guides'
 import { SITE_URL } from '../lib/adsense'
 import { useSeo } from '../hooks/useSeo'
-import { AdUnit } from '../components/Ads/AdUnit'
-import { AD_SLOTS } from '../lib/adsense'
 
 const ITEM_LIST_JSON_LD = {
   '@context': 'https://schema.org',
@@ -75,8 +73,6 @@ export function GuidesIndex() {
           </article>
         ))}
       </div>
-
-      <AdUnit slot={AD_SLOTS.inArticle} format="fluid" layout="in-article" minHeight={120} className="mt-12" />
     </div>
   )
 }
