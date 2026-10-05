@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/a-propos", "destination": "/contact", "statusCode": 301 },
+    { "source": "/confidentialite", "destination": "/politique-de-confidentialite", "statusCode": 301 },
+    { "source": "/conditions", "destination": "/conditions-utilisation", "statusCode": 301 },
+    { "source": "/guides/creer-un-qr-code-personnalise", "destination": "/guide/personnaliser-qr-code-sans-perdre-la-lecture", "statusCode": 301 },
+    { "source": "/guides/qr-code-statique-vs-dynamique", "destination": "/guide/qr-code-statique-ou-dynamique", "statusCode": 301 },
+    { "source": "/guides/qr-code-vcard-contact", "destination": "/guide/qr-code-carte-de-visite", "statusCode": 301 },
+    { "source": "/guides/:slug(qr-code-wifi|qr-code-menu-restaurant|niveau-correction-erreur-qr-code|qr-code-carte-de-visite|qr-code-reseaux-sociaux)", "destination": "/guide/:slug", "statusCode": 301 },
+    { "source": "/guides/:rest+", "destination": "/guides", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), usb=()" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/ads.txt",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    }
+  ]
+}
