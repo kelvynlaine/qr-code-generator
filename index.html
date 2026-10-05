@@ -29,14 +29,8 @@
       rel="stylesheet"
     />
 
-    <script>
-      // Applique le thème enregistré avant le premier rendu (évite le flash de couleur).
-      try {
-        const stored = localStorage.getItem('theme')
-        const dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
-        if (dark) document.documentElement.classList.add('dark')
-      } catch {}
-    </script>
+    <!-- Script externe (et non inline) : la CSP n'autorise que les scripts du site. -->
+    <script src="/theme-init.js"></script>
   </head>
   <body>
     <div id="root"></div>
