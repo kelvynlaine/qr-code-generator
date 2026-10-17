@@ -26,13 +26,13 @@ export function GuideLayout({ slug, children }: GuideLayoutProps) {
       dateModified: guide.updatedAt,
       inLanguage: 'fr-FR',
       author: { '@type': 'Person', name: GUIDE_AUTHOR },
-      publisher: { '@type': 'Organization', name: 'QR Studio', url: SITE_URL },
+      publisher: { '@type': 'Organization', name: 'CodeQRGen', url: SITE_URL },
       mainEntityOfPage: `${SITE_URL}${guidePath(guide.slug)}`,
     }),
     [guide],
   )
 
-  useSeo({ title: `${guide.title} — QR Studio`, description: guide.description, jsonLd })
+  useSeo({ title: `${guide.title} — CodeQRGen`, description: guide.description, jsonLd })
 
   const related = GUIDES.filter((item) => item.slug !== slug)
 

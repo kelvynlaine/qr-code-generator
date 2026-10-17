@@ -141,7 +141,7 @@ export function ErrorCorrectionGuide() {
         éclairage. C’est pourquoi un logo appelle toujours le niveau H.
       </p>
       <p>
-        Dans le générateur de QR Studio, l’import d’une image dans la section <strong>Logo central</strong>{' '}
+        Dans le générateur de CodeQRGen, l’import d’une image dans la section <strong>Logo central</strong>{' '}
         règle automatiquement la correction sur H. Rien ne vous empêche ensuite de redescendre
         manuellement à un niveau inférieur : évitez-le tant qu’un logo est présent. De même, gardez le
         réglage « Taille du logo » dans des valeurs raisonnables et laissez actif le halo de sécurité, qui

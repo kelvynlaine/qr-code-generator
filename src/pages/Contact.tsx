@@ -4,7 +4,7 @@ import { PageLayout } from '../components/Layout/PageLayout'
 import { useSeo } from '../hooks/useSeo'
 
 /**
- * Page « À propos / Contact ».
+ * Page Contact.
  *
  * AdSense refuse les sites sans identité claire : cette page explique qui édite
  * l'outil, pourquoi, et comment le joindre. Le formulaire est volontairement
@@ -13,44 +13,19 @@ import { useSeo } from '../hooks/useSeo'
  */
 export function Contact() {
   useSeo({
-    title: 'À propos et contact — QR Studio',
+    title: 'Contact — CodeQRGen',
     description:
-      'Qui édite QR Studio, pourquoi ce générateur de QR codes est gratuit, et comment nous contacter pour une question, un bug ou une demande RGPD.',
+      'Contacter l’éditeur de CodeQRGen pour une question, un bug, une suggestion ou une demande relative à vos données personnelles.',
   })
 
   return (
     <PageLayout
-      title="À propos et contact"
-      lead="QR Studio est un outil indépendant, gratuit et sans inscription, pensé pour créer des QR codes réellement utilisables — pas pour collecter des adresses e-mail."
+      title="Contact"
+      lead="Une question, un bug, une suggestion ou une demande RGPD : voici comment me joindre."
     >
-      <h2 id="projet">Le projet</h2>
       <p>
-        La plupart des générateurs de QR codes gratuits ont le même défaut : ils sont gratuits en
-        apparence. Le QR code produit passe par un lien de redirection appartenant au service, ce qui
-        permet d’en couper l’accès plus tard, ou impose un compte payant pour retirer un filigrane.
-        Quand le code est déjà imprimé sur dix mille flyers, la note arrive au pire moment.
-      </p>
-      <p>
-        QR Studio prend le problème par l’autre bout. Les QR codes générés ici sont{' '}
-        <strong>statiques</strong> : votre lien est encodé directement dans l’image, sans
-        intermédiaire. Personne — pas même nous — ne peut les désactiver, les rediriger ou les faire
-        expirer. En contrepartie, changer la destination impose de générer un nouveau code : c’est le
-        prix de l’indépendance, et il est assumé.
-      </p>
-      <p>
-        Le second parti pris est technique : tout s’exécute dans votre navigateur. Le contenu que vous
-        encodez, le logo que vous importez et vos réglages ne transitent par aucun serveur. Ce n’est
-        pas un argument marketing, c’est une conséquence de l’architecture — il n’y a pas de backend
-        auquel envoyer quoi que ce soit.
-      </p>
-
-      <h2 id="modele">Comment le service est financé</h2>
-      <p>
-        Le site est financé par la publicité (Google AdSense), affichée uniquement avec votre accord.
-        Nous avons volontairement écarté les emplacements les plus rémunérateurs mais les plus
-        agressifs : pas d’interstitiel avant le téléchargement, pas de publicité collée aux boutons du
-        générateur, pas de compte à créer pour exporter en haute définition. Un visiteur qui n’arrive
-        pas à faire son QR code ne revient pas — et un site sans visiteurs ne rapporte rien.
+        Pour savoir qui édite le site et comment il fonctionne, consultez la page{' '}
+        <Link to="/a-propos">À propos</Link>.
       </p>
 
       <h2 id="contact">Nous écrire</h2>

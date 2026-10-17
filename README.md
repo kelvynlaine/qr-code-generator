@@ -1,4 +1,4 @@
-# QR Studio — générateur de QR codes personnalisés
+# CodeQRGen — générateur de QR codes personnalisés
 
 Générateur de QR codes gratuit, sans inscription et **100 % côté client** : aucune donnée
 (contenu, logo, réglages) ne quitte le navigateur.
@@ -123,8 +123,8 @@ texte brut, et `https://codeqrgen.fr/faq` doit s'ouvrir directement sans 404.
 | --- | --- | --- |
 | `VITE_ADSENSE_CLIENT_ID` | `ca-pub-2244677473979299` | Script AdSense + balise de validation dans le `<head>` |
 | `VITE_ADSENSE_SHOW_UNITS` | `false` | Blocs manuels ; passer à `true` **après** approbation |
-| `VITE_AD_SLOT_AFTER_GENERATOR` | `5433820303` | QR Studio - Apres generateur (display carré) |
-| `VITE_AD_SLOT_IN_ARTICLE` | `9542641610` | QR Studio - In-article (natif In-Article) |
+| `VITE_AD_SLOT_AFTER_GENERATOR` | `5433820303` | CodeQRGen - Apres generateur (display carré) |
+| `VITE_AD_SLOT_IN_ARTICLE` | `9542641610` | CodeQRGen - In-article (natif In-Article) |
 
 Le script AdSense est injecté dans le `<head>` de toutes les pages au build (plugin
 `adsense-head` de `vite.config.ts`), y compris dans le HTML pré-rendu : c'est ce que vérifie le

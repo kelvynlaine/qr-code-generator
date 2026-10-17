@@ -4,11 +4,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/a-propos",
-      "destination": "/contact",
-      "statusCode": 301
-    },
-    {
       "source": "/confidentialite",
       "destination": "/politique-de-confidentialite",
       "statusCode": 301

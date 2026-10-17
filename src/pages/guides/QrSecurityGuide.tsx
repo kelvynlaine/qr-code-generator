@@ -117,7 +117,7 @@ export function QrSecurityGuide() {
 
       <h2 id="statique">Ce qu’un QR code statique change</h2>
       <p>
-        Un QR code statique, comme ceux que produit QR Studio, encode directement votre adresse. Aucun
+        Un QR code statique, comme ceux que produit CodeQRGen, encode directement votre adresse. Aucun
         prestataire intermédiaire ne peut modifier sa destination, ni être piraté pour le faire. Cela ne
         protège pas contre un autocollant posé par-dessus — aucun QR code n’en est capable —, mais cela
         supprime un point de défaillance. Nous détaillons ces différences dans le guide{' '}

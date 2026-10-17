@@ -3,7 +3,7 @@ import { useSeo } from '../hooks/useSeo'
 
 export function NotFound() {
   useSeo({
-    title: 'Page introuvable — QR Studio',
+    title: 'Page introuvable — CodeQRGen',
     description: 'Cette page n’existe pas ou plus. Retournez au générateur de QR codes.',
     noIndex: true,
   })

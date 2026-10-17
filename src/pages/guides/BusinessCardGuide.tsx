@@ -81,7 +81,7 @@ export function BusinessCardGuide() {
         tout est figé : un changement de numéro impose de réimprimer les cartes.
       </p>
 
-      <h3>Créer une vCard avec QR Studio</h3>
+      <h3>Créer une vCard avec CodeQRGen</h3>
       <p>
         Le générateur ne propose pas de formulaire dédié à la vCard. Il est pourtant possible d’en créer
         une, car l’onglet <strong>Texte</strong> encode exactement ce que vous saisissez, caractère pour

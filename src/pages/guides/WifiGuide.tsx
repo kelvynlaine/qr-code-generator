@@ -51,7 +51,7 @@ export function WifiGuide() {
         Un détail explique beaucoup de codes « faits maison » qui refusent de fonctionner : les
         caractères <code>;</code>, <code>,</code>, <code>:</code>, <code>"</code> et <code>\</code> ont un
         sens particulier dans ce format. S’ils apparaissent dans le nom du réseau ou dans le mot de passe,
-        ils doivent être précédés d’une barre oblique inverse. Le générateur de QR Studio applique cet
+        ils doivent être précédés d’une barre oblique inverse. Le générateur de CodeQRGen applique cet
         échappement automatiquement : vous saisissez le mot de passe tel qu’il est, sans vous en soucier.
       </p>
 

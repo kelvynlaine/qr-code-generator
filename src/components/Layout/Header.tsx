@@ -67,7 +67,7 @@ export function Header() {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-600 text-white">
             <QrCode aria-hidden="true" className="h-5 w-5" />
           </span>
-          QR Studio
+          CodeQRGen
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden items-center gap-1 lg:flex">

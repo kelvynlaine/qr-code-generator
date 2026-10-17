@@ -18,7 +18,7 @@ const FAQ_JSON_LD = {
 
 export function FaqPage() {
   useSeo({
-    title: 'FAQ — Questions fréquentes sur les QR codes personnalisés — QR Studio',
+    title: 'FAQ — Questions fréquentes sur les QR codes personnalisés — CodeQRGen',
     description:
       'Gratuité, expiration, usage commercial, formats PNG/JPG/SVG, lisibilité avec des couleurs personnalisées, logo, taille d’impression et confidentialité : toutes les réponses.',
     jsonLd: FAQ_JSON_LD,

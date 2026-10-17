@@ -18,7 +18,7 @@ const ITEM_LIST_JSON_LD = {
 
 export function GuidesIndex() {
   useSeo({
-    title: 'Guides pratiques sur les QR codes — QR Studio',
+    title: 'Guides pratiques sur les QR codes — CodeQRGen',
     description:
       'Taille d’impression, QR code statique ou dynamique, personnalisation lisible, sécurité : des guides concrets pour créer des QR codes qui fonctionnent.',
     jsonLd: ITEM_LIST_JSON_LD,

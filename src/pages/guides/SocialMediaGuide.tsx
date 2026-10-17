@@ -158,7 +158,7 @@ export function SocialMediaGuide() {
 
       <h2 id="mesurer">Mesurer les résultats sans outil payant</h2>
       <p>
-        Les codes générés par QR Studio sont statiques : aucun compteur de scans n’est intégré. Ce n’est pas
+        Les codes générés par CodeQRGen sont statiques : aucun compteur de scans n’est intégré. Ce n’est pas
         un obstacle si vous passez par votre propre page de liens : ajoutez à l’adresse un paramètre de
         campagne, par exemple <code>?utm_source=salon</code>, et les statistiques de votre site feront
         apparaître séparément les visiteurs venus de chaque support. Pour un lien direct vers un profil, les

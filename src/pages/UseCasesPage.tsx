@@ -6,7 +6,7 @@ import { useSeo } from '../hooks/useSeo'
 
 export function UseCasesPage() {
   useSeo({
-    title: 'À quoi sert un QR code personnalisé ? 6 cas d’usage concrets — QR Studio',
+    title: 'À quoi sert un QR code personnalisé ? 6 cas d’usage concrets — CodeQRGen',
     description:
       'Restaurant, carte de visite, événement, réseaux sociaux, packaging, Wi-Fi invité : comment utiliser un QR code personnalisé, avec les bonnes pratiques de taille, de placement et de test.',
   })

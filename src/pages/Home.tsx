@@ -11,7 +11,7 @@ import { useSeo } from '../hooks/useSeo'
 const APP_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'QR Studio',
+  name: 'CodeQRGen',
   applicationCategory: 'DesignApplication',
   operatingSystem: 'Web',
   description:
@@ -28,7 +28,7 @@ const APP_JSON_LD = {
 
 export function Home() {
   useSeo({
-    title: 'Générateur de QR code personnalisé gratuit — couleurs, logo et texte | QR Studio',
+    title: 'Générateur de QR code personnalisé gratuit — couleurs, logo et texte | CodeQRGen',
     description:
       'Créez un QR code personnalisé gratuitement : couleurs et dégradés, formes des modules, logo central, texte sous le code. Aperçu en temps réel, export PNG, JPG et SVG. Sans inscription, sans expiration.',
     jsonLd: APP_JSON_LD,

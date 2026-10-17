@@ -11,7 +11,7 @@ export function StaticVsDynamicGuide() {
         Un QR code statique contient directement l’information finale : l’adresse de votre page, un
         numéro de téléphone, les identifiants d’un réseau Wi-Fi. Le téléphone lit l’image et agit,
         sans aucun intermédiaire. C’est le fonctionnement d’origine du format, et c’est ce que produit
-        QR Studio.
+        CodeQRGen.
       </p>
       <p>Cette simplicité a des conséquences très concrètes :</p>
       <ul>

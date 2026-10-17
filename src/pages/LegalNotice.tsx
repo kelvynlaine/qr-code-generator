@@ -5,16 +5,16 @@ import { useSeo } from '../hooks/useSeo'
 /** Mentions légales — obligatoires en France (LCEN, article 6-III). */
 export function LegalNotice() {
   useSeo({
-    title: 'Mentions légales — QR Studio',
+    title: 'Mentions légales — CodeQRGen',
     description:
-      'Identité de l’éditeur, hébergeur, propriété intellectuelle et responsabilité du site QR Studio, générateur de QR codes personnalisés.',
+      'Identité de l’éditeur, hébergeur, propriété intellectuelle et responsabilité du site CodeQRGen, générateur de QR codes personnalisés.',
   })
 
   return (
     <PageLayout
       title="Mentions légales"
       lead="Informations légales relatives à l’éditeur et à l’hébergeur du site, conformément à la loi pour la confiance dans l’économie numérique (LCEN)."
-      updatedAt="25 septembre 2026"
+      updatedAt="17 octobre 2026"
     >
       <h2 id="editeur">Éditeur du site</h2>
       <ul>
@@ -39,15 +39,15 @@ export function LegalNotice() {
       <h2 id="hebergeur">Hébergeur</h2>
       <ul>
         <li>
-          <strong>Nom :</strong> Hostinger International Ltd.
+          <strong>Nom :</strong> Vercel Inc.
         </li>
         <li>
-          <strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre
+          <strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis
         </li>
         <li>
           <strong>Contact :</strong>{' '}
-          <a href="https://www.hostinger.fr/contact" target="_blank" rel="noopener noreferrer">
-            hostinger.fr/contact
+          <a href="https://vercel.com/contact" target="_blank" rel="noopener noreferrer">
+            vercel.com/contact
           </a>
         </li>
       </ul>

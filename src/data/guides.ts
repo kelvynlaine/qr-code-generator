@@ -118,6 +118,72 @@ export const GUIDES: GuideMeta[] = [
     publishedAt: '2026-09-25',
     updatedAt: '2026-09-25',
   },
+  {
+    slug: 'qr-code-avis-google',
+    title: 'QR code avis Google : obtenir plus d’avis clients',
+    description:
+      'Trouver le lien direct vers le formulaire d’avis Google, créer le QR code, le placer au bon endroit et respecter les règles de Google sur la collecte d’avis.',
+    lead: 'Vos clients satisfaits laissent rarement un avis, faute de temps plutôt que d’envie. Un QR code qui ouvre directement le formulaire de notation lève l’obstacle — à condition d’encoder le bon lien et de respecter les règles.',
+    excerpt: 'Le bon lien à encoder, les emplacements qui fonctionnent et les pratiques interdites par Google.',
+    readingMinutes: 6,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
+  {
+    slug: 'format-qr-code-png-jpg-svg',
+    title: 'PNG, JPG ou SVG : quel format pour son QR code ?',
+    description:
+      'Matriciel ou vectoriel, transparence, résolution à 300 ppp : comparatif des formats PNG, JPG et SVG pour exporter un QR code adapté au web ou à l’impression.',
+    lead: 'À l’écran, les trois formats se ressemblent. À l’impression, le mauvais choix donne un code flou, un fond blanc indésirable ou un fichier refusé par l’imprimeur. Voici comment choisir.',
+    excerpt: 'Les différences entre PNG, JPG et SVG, et le bon format pour chaque usage.',
+    readingMinutes: 6,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
+  {
+    slug: 'tester-qr-code-avant-impression',
+    title: 'Tester un QR code avant de l’imprimer : la méthode',
+    description:
+      'Vérifier le contenu, tester sur iPhone et Android, imprimer une épreuve à l’échelle et reproduire les conditions réelles : la méthode pour valider un QR code avant tirage.',
+    lead: 'Scanner son QR code sur l’écran de l’ordinateur ne prouve presque rien. Voici la méthode en quatre étapes pour s’assurer qu’il fonctionnera vraiment une fois imprimé, avant de lancer le tirage.',
+    excerpt: 'Quatre étapes pour valider un QR code dans les conditions réelles, et quoi faire s’il échoue.',
+    readingMinutes: 7,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
+  {
+    slug: 'qr-code-email-telephone',
+    title: 'QR code e-mail et téléphone : faire écrire ou appeler en un scan',
+    description:
+      'Créer un QR code qui prépare un e-mail (destinataire, objet, message) ou lance un appel : formats mailto et tel, usages conseillés, limites et bonnes pratiques.',
+    lead: 'Un QR code peut faire mieux qu’ouvrir une page : préparer un e-mail déjà adressé ou proposer d’appeler un numéro. Une solution simple pour un artisan, un service client ou une annonce.',
+    excerpt: 'Les formats mailto et tel, les usages adaptés à chacun et les précautions à prendre.',
+    readingMinutes: 6,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
+  {
+    slug: 'mesurer-scans-qr-code-utm',
+    title: 'Mesurer les scans d’un QR code avec les paramètres UTM',
+    description:
+      'Suivre les visites générées par un QR code sans abonnement : paramètres UTM, convention de nommage, redirection sur votre domaine et lecture des résultats dans Google Analytics.',
+    lead: 'Savoir quel flyer ou quelle affiche fonctionne ne nécessite pas d’abonnement à un service de QR codes dynamiques. Les paramètres UTM et votre outil d’analyse habituel suffisent.',
+    excerpt: 'Suivre l’efficacité de chaque support imprimé, gratuitement et sans intermédiaire.',
+    readingMinutes: 7,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
+  {
+    slug: 'qr-code-mariage-evenement',
+    title: 'QR code pour mariage et événement : idées et conseils',
+    description:
+      'Faire-part, réponses, itinéraire, partage de photos, Wi-Fi : les usages utiles d’un QR code pour un mariage ou un événement, et comment l’accorder à la décoration.',
+    lead: 'Réponses des invités, itinéraire, album photo partagé, Wi-Fi de la salle : un QR code bien pensé évite des dizaines de questions aux organisateurs, avant comme pendant l’événement.',
+    excerpt: 'Les usages les plus utiles avant et pendant l’événement, et les pièges à éviter.',
+    readingMinutes: 7,
+    publishedAt: '2026-10-17',
+    updatedAt: '2026-10-17',
+  },
 ]
 
 export const guidePath = (slug: string): string => `/guide/${slug}`

@@ -4,20 +4,20 @@ import { useSeo } from '../hooks/useSeo'
 
 export function Terms() {
   useSeo({
-    title: 'Conditions générales d’utilisation — QR Studio',
+    title: 'Conditions générales d’utilisation — CodeQRGen',
     description:
-      'Conditions d’utilisation du générateur de QR codes QR Studio : usage autorisé, usage commercial, responsabilité, publicité et évolution du service.',
+      'Conditions d’utilisation du générateur de QR codes CodeQRGen : usage autorisé, usage commercial, responsabilité, publicité et évolution du service.',
   })
 
   return (
     <PageLayout
       title="Conditions générales d’utilisation"
-      lead="En utilisant QR Studio, vous acceptez les conditions ci-dessous. Elles sont volontairement courtes et lisibles."
+      lead="En utilisant CodeQRGen, vous acceptez les conditions ci-dessous. Elles sont volontairement courtes et lisibles."
       updatedAt="9 août 2026"
     >
       <h2 id="objet">1. Objet</h2>
       <p>
-        Les présentes conditions régissent l’accès et l’utilisation du site QR Studio, service en
+        Les présentes conditions régissent l’accès et l’utilisation du site CodeQRGen, service en
         ligne gratuit permettant de générer, personnaliser et télécharger des QR codes. L’utilisation
         du site vaut acceptation pleine et entière de ces conditions.
       </p>

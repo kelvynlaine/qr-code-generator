@@ -11,7 +11,8 @@ const PRODUCT_LINKS = [
 ]
 
 const LEGAL_LINKS = [
-  { to: '/contact', label: 'À propos et contact' },
+  { to: '/a-propos', label: 'À propos' },
+  { to: '/contact', label: 'Contact' },
   { to: '/mentions-legales', label: 'Mentions légales' },
   { to: '/politique-de-confidentialite', label: 'Politique de confidentialité' },
   { to: '/conditions-utilisation', label: 'Conditions d’utilisation' },
@@ -27,7 +28,7 @@ export function Footer() {
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-600 text-white">
               <QrCode aria-hidden="true" className="h-5 w-5" />
             </span>
-            QR Studio
+            CodeQRGen
           </p>
           <p className="mt-3 max-w-sm text-sm text-muted">
             Le générateur de QR codes personnalisés, gratuit et sans inscription. Tout est généré
@@ -100,7 +101,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} QR Studio — édité par Kelvyn Laine.
+            © {new Date().getFullYear()} CodeQRGen — édité par Kelvyn Laine.
           </p>
         </div>
       </div>

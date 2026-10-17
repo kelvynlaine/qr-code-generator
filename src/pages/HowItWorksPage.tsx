@@ -21,7 +21,7 @@ const HOW_TO_JSON_LD = {
 
 export function HowItWorksPage() {
   useSeo({
-    title: 'Comment créer un QR code personnalisé en 4 étapes — QR Studio',
+    title: 'Comment créer un QR code personnalisé en 4 étapes — CodeQRGen',
     description:
       'Guide complet pour créer un QR code personnalisé gratuit : choix du contenu, couleurs et formes, logo central, vérification de la lisibilité et export PNG, JPG ou SVG.',
     jsonLd: HOW_TO_JSON_LD,

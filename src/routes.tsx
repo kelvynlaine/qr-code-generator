@@ -13,10 +13,17 @@ import { MenuRestaurantGuide } from './pages/guides/MenuRestaurantGuide'
 import { ErrorCorrectionGuide } from './pages/guides/ErrorCorrectionGuide'
 import { BusinessCardGuide } from './pages/guides/BusinessCardGuide'
 import { SocialMediaGuide } from './pages/guides/SocialMediaGuide'
+import { GoogleReviewsGuide } from './pages/guides/GoogleReviewsGuide'
+import { ExportFormatGuide } from './pages/guides/ExportFormatGuide'
+import { TestBeforePrintGuide } from './pages/guides/TestBeforePrintGuide'
+import { EmailPhoneGuide } from './pages/guides/EmailPhoneGuide'
+import { TrackingGuide } from './pages/guides/TrackingGuide'
+import { EventGuide } from './pages/guides/EventGuide'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { LegalNotice } from './pages/LegalNotice'
 import { Terms } from './pages/Terms'
 import { Contact } from './pages/Contact'
+import { About } from './pages/About'
 import { NotFound } from './pages/NotFound'
 import { GUIDES, guidePath } from './data/guides'
 
@@ -37,6 +44,12 @@ const GUIDE_PAGES: Record<string, ReactElement> = {
   'niveau-correction-erreur-qr-code': <ErrorCorrectionGuide />,
   'qr-code-carte-de-visite': <BusinessCardGuide />,
   'qr-code-reseaux-sociaux': <SocialMediaGuide />,
+  'qr-code-avis-google': <GoogleReviewsGuide />,
+  'format-qr-code-png-jpg-svg': <ExportFormatGuide />,
+  'tester-qr-code-avant-impression': <TestBeforePrintGuide />,
+  'qr-code-email-telephone': <EmailPhoneGuide />,
+  'mesurer-scans-qr-code-utm': <TrackingGuide />,
+  'qr-code-mariage-evenement': <EventGuide />,
 }
 
 /**
@@ -54,6 +67,7 @@ export const ROUTES: AppRoute[] = [
   { path: '/comment-ca-marche', element: <HowItWorksPage />, sitemap: { priority: 0.8, changefreq: 'monthly' } },
   { path: '/cas-usage', element: <UseCasesPage />, sitemap: { priority: 0.8, changefreq: 'monthly' } },
   { path: '/faq', element: <FaqPage />, sitemap: { priority: 0.8, changefreq: 'monthly' } },
+  { path: '/a-propos', element: <About />, sitemap: { priority: 0.6, changefreq: 'yearly' } },
   { path: '/contact', element: <Contact />, sitemap: { priority: 0.5, changefreq: 'yearly' } },
   { path: '/mentions-legales', element: <LegalNotice />, sitemap: { priority: 0.3, changefreq: 'yearly' } },
   {

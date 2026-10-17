@@ -7,20 +7,20 @@ const UPDATED_AT = '25 septembre 2026'
 
 export function PrivacyPolicy() {
   useSeo({
-    title: 'Politique de confidentialité — QR Studio',
+    title: 'Politique de confidentialité — CodeQRGen',
     description:
-      'Comment QR Studio traite vos données : génération locale des QR codes, cookies publicitaires Google AdSense, consentement et exercice de vos droits RGPD.',
+      'Comment CodeQRGen traite vos données : génération locale des QR codes, cookies publicitaires Google AdSense, consentement et exercice de vos droits RGPD.',
   })
 
   return (
     <PageLayout
       title="Politique de confidentialité"
-      lead="QR Studio est conçu pour fonctionner sans collecter vos données. Cette page explique précisément ce qui est traité, par qui, et comment reprendre la main."
+      lead="CodeQRGen est conçu pour fonctionner sans collecter vos données. Cette page explique précisément ce qui est traité, par qui, et comment reprendre la main."
       updatedAt={UPDATED_AT}
     >
       <h2 id="responsable">1. Responsable du traitement</h2>
       <p>
-        Le site QR Studio est édité par l’éditeur identifié sur la page{' '}
+        Le site CodeQRGen est édité par l’éditeur identifié sur la page{' '}
         <Link to="/mentions-legales">Mentions légales</Link>. Pour toute question relative à vos
         données personnelles, vous pouvez écrire à{' '}
         <a href="mailto:kelvyn.off@gmail.com">kelvyn.off@gmail.com</a>.
